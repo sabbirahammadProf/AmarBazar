@@ -1,0 +1,84 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Poppins&display=swap');
+@import url('https://cdn.staticaly.com/gh/sh4hids/bangla-web-fonts/9baee0fc23e77fe957c0b70fe49d81d2cbbe87d6/boshonto/stylesheet.css');
+
+/* Common design */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.first-look {
+    font-family: 'Boshonto', sans-serif;
+    height: 600px;
+}
+
+/* Reusable class */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.text-white {
+    color: white;
+}
+
+/* Navigation Bar */
+.site-header {
+    font-size: 24px;
+    color: black;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 8px;
+}
+
+nav ul li a {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: black;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cart-btn {
+    border: none;
+    background: transparent;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* Hero Area */
+.hero-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+.hero-area img {
+    width: 500px;
+}
