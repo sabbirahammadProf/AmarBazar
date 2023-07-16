@@ -30,7 +30,7 @@ a {
 
 /* Navigation Bar */
 .main-header-area {
-    background-color: rgb(107, 48, 255);
+    background-color: #525FE1;
     padding: 20px 0;
 }
 
@@ -63,7 +63,7 @@ a {
     padding: 14px 20px;
     border: none;
     outline: none;
-    background-color: rgb(255, 179, 80);
+    background-color: #F86F03;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
@@ -76,7 +76,7 @@ a {
 }
 
 nav {
-    background-color: rgb(255, 205, 67);
+    background-color: #F86F03;
     padding: 10px;
     text-align: center;
 }
@@ -84,18 +84,24 @@ nav {
 nav ul li {
     list-style: none;
     display: inline;
+    border-right: 1px solid rgba(0, 0, 0, 0.109);
+}
+
+nav ul li:last-child {
+    border: none;
 }
 
 nav ul li a {
     color: black;
     padding: 10px 15px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: rgb(255, 217, 111);
-    padding: 10px 15px;
+    color: white;
 }
 
+/* Hero area */
 .hero-area {
     background-image: url(images/hero-bg.png);
     background-size: 100% 350px;
@@ -106,4 +112,259 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.hero-area h1 {
+    font-family: 'Boshonto';
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.hero-area a {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    background-color: #fc831f;
+    font-size: 15px;
+    border-radius: 2px;
+    transition: all 0.3s linear;
+    color: white;
+    font-weight: 500;
+}
+
+.hero-area a:hover {
+    background-color: black;
+}
+
+/* Offers area */
+.offers-area {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin-top: 100px;
+    gap: 1%;
+}
+
+.offers-area img {
+    width: 85%;
+}
+
+/* Products by Category */
+.products-by-category {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.products-by-category h2 {
+    margin-bottom: 30px;
+}
+
+.products-by-category-inner {
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 15% 15%;
+    column-gap: 2%;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid whie;
+    box-shadow: rgba(67, 71, 85, 0.108) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    padding: 15px 0;
+}
+
+.category-card:hover {
+    border: 1px solid #ebebeb;
+}
+
+
+.category-card a {
+    color: black;
+    font-size: 14px;
+    transition: all 0.2s linear;
+}
+
+.category-card a:hover {
+    color: #F86F03;
+}
+
+.category-card a img {
+    width: 80%;
+}
+
+/* Top sells */
+.top-sell {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.top-sell h2 {
+    margin-bottom: 30px;
+}
+
+.top-sell-inner {
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    gap: 2%;
+}
+
+.top-sell-card {
+    box-shadow: rgba(0, 0, 0, 0.1) 5px 10px 50px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.top-sell-card img {
+    width: 80%;
+    padding: 10px 0;
+}
+
+
+.top-sell-discount {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background-color: #F86F03;
+    color: white !important;
+    padding: 2px 4px;
+    font-size: 14px !important;
+}
+
+.top-sell-card p {
+    text-align: left;
+    color: #1177fc;
+    padding: 0 15px;
+}
+
+.top-sell-card h4 {
+    text-align: left;
+    padding: 0 15px;
+    margin-top: 8px;
+    color: #F86F03;
+}
+
+.top-sell-card i {
+    font-size: 11px;
+    color: #e2a703;
+}
+
+.top-sell-card span {
+    font-size: 11px;
+    color: #000000b9;
+}
+
+.top-sell-button {
+    width: 90%;
+    margin-top: 12px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #fc831f;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Just for you section */
+.just-for-you {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.just-for-you h2 {
+    margin-bottom: 30px;
+}
+
+.just-for-you-inner {
+    display: grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    gap: 2%;
+}
+
+.just-for-you-card {
+    box-shadow: rgba(0, 0, 0, 0.1) 5px 10px 50px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.just-for-you img {
+    width: 80%;
+    padding: 10px 0;
+}
+
+
+.just-for-you-discount {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    background-color: #F86F03;
+    color: white !important;
+    padding: 2px 4px;
+    font-size: 14px !important;
+}
+
+.just-for-you p {
+    text-align: left;
+    color: #1177fc;
+    padding: 0 15px;
+}
+
+.just-for-you h4 {
+    text-align: left;
+    padding: 0 15px;
+    margin-top: 8px;
+    color: #F86F03;
+}
+
+.just-for-you i {
+    font-size: 11px;
+    color: #e2a703;
+}
+
+.just-for-you span {
+    font-size: 11px;
+    color: #000000b9;
+}
+
+.just-for-you-button {
+    width: 90%;
+    margin-top: 12px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    background-color: #fc831f;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.load-more-button {
+    width: 10%;
+    padding-top: 6px;
+    padding-bottom: 4px;
+    margin-top: 25px;
+    border: none;
+    outline: none;
+    background-color: #1177fc;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* Footer */
+footer {
+    margin-top: 100px;
+    background-color: #1177fc;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 80px;
+    font-size: 30px;
+}
+
+footer a {
+    color: white;
+}
+
+footer span {
+    font-size: 16px;
 }
