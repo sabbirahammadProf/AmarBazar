@@ -23,8 +23,28 @@
                         placeholder="Search what you want to buy...">
                     <button class="header-search-btn main-eng-font">Search</button>
                 </div>
-                <div>
+                <div class="header-cart-area">
                     <i class="fa-solid fa-cart-shopping header-cart"></i>
+                    <div>
+                        <div class="header-cart-items">
+                            <div class="header-cart-items-inner-1" id="header-cart-items-inner-1">
+                                <p>Nothing added to cart</p>
+                            </div>
+                            <!-- Checkout total -->
+                            <div class="header-cart-items-inner-2" id="header-cart-items-inner-2">
+                                <div class="header-cart-item-single-2 cart-item-total">
+                                    <div>TOTAL:</div>
+                                    <div class="header-cart-item-price main-eng-font">$<span
+                                            id="cart-total-price">0</span></div>
+                                    <div id="cart-total-qtt">0</div>
+                                </div>
+                                <div class="cart-links">
+                                    <div><a href="#">View Cart</a></div>
+                                    <div><a href="#">Checkout</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,61 +129,8 @@
     <!-- Tops sells -->
     <section class="top-sell">
         <h2>Top Selling Products</h2>
-        <div class="top-sell-inner container">
-            <div class="top-sell-card">
-                <a href="#"><img src="images/category-eight.png" alt="">
-                    <span class="top-sell-discount">-45%</span>
-                </a>
-                <a href="#">
-                    <p>Monthly spice pack for full family</p>
-                </a>
-                <h4>$21</h4>
-                <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-regular fa-star"></i> <span>(87)</span></p>
-                <button class="main-eng-font top-sell-button">Add to cart</button>
-            </div>
-            <div class="top-sell-card">
-                <a href="#"><img src="images/category-seven.png" alt=""><span class="top-sell-discount">-35%</span></a>
-                <a href="#">
-                    <p>Drinks with 7 flavour - (available for kids)</p>
-                </a>
-                <h4>$67</h4>
-                <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-regular fa-star"></i> <span>(69)</span></p>
-                <button class="main-eng-font top-sell-button">Add to cart</button>
-            </div>
-            <div class="top-sell-card">
-                <a href="#"><img src="images/category-six.png" alt=""><span class="top-sell-discount">Free
-                        Delivery</span></a>
-                <a href="#">
-                    <p>Kids cookies box - 10 different items</p>
-                </a>
-                <h4>$10</h4>
-                <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-solid fa-star"></i> <span>(45)</span></p>
-                <button class="main-eng-font top-sell-button">Add to cart</button>
-            </div>
-            <div class="top-sell-card">
-                <a href="#"><img src="images/category-eight.png" alt=""><span class="top-sell-discount">-20%</span></a>
-                <a href="#">
-                    <p>Monthly spice pack for full family</p>
-                </a>
-                <h4>$21</h4>
-                <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-regular fa-star"></i> <span>(87)</span></p>
-                <button class="main-eng-font top-sell-button">Add to cart</button>
-            </div>
-            <div class="top-sell-card">
-                <a href="#"><img src="images/category-seven.png" alt=""><span class="top-sell-discount">Free
-                        Delivery</span></a>
-                <a href="#">
-                    <p>Drinks with 7 flavour - (available for kids)</p>
-                </a>
-                <h4>$67</h4>
-                <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                        class="fa-regular fa-star"></i> <span>(69)</span></p>
-                <button class="main-eng-font top-sell-button">Add to cart</button>
-            </div>
+        <div class="top-sell-inner container" id="top-sell-inner">
+
         </div>
     </section>
 
