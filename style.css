@@ -193,7 +193,9 @@ a {
     text-align: center !important;
     padding-top: 5px !important;
     display: none;
+    color: rgb(26, 185, 2);
 }
+
 
 .display-block {
     display: block;
@@ -475,6 +477,10 @@ nav ul li a:hover {
     color: white;
     cursor: pointer;
     border-radius: 3px;
+}
+
+.load-more-button a {
+    color: white;
 }
 
 /* Footer */

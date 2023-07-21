@@ -1,5 +1,5 @@
 // Json files
-const topSeelingProducts = [
+const allProducts = [
     {
         "id": 1,
         "title": "Lorem ipsum dolor sit amet.",
@@ -166,33 +166,30 @@ calculateTotalProductQuantity();
 
 const topSellInner = document.getElementById('top-sell-inner');
 
-const showTopSellProducts = () => {
-    for (let i = 0; i < topSeelingProducts.length; i++) {
-        topSellInner.innerHTML += `<div class="top-sell-card" id="top-sell-card">
-        <a href="`+ topSeelingProducts[i].url + `"><img src="` + topSeelingProducts[i].imageurl + `" alt="">
+
+for (let i = 0; i < allProducts.length; i++) {
+    topSellInner.innerHTML += `<div class="top-sell-card" id="top-sell-card">
+        <a href="`+ allProducts[i].url + `"><img src="` + allProducts[i].imageurl + `" alt="">
             <span class="top-sell-discount">-45%</span>
         </a>
-        <a href="`+ topSeelingProducts[i].url + `">
-            <p>`+ topSeelingProducts[i].title + `</p>
+        <a href="`+ allProducts[i].url + `">
+            <p>`+ allProducts[i].title + `</p>
         </a>
-        <h4>$`+ topSeelingProducts[i].price + `</h4>
+        <h4>$`+ allProducts[i].price + `</h4>
         <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                class="fa-regular fa-star"></i> <span>(`+ topSeelingProducts[i].reviewNumber + `)</span></p>
+                class="fa-regular fa-star"></i> <span>(`+ allProducts[i].reviewNumber + `)</span></p>
         <button class="main-eng-font top-sell-button" onclick="addToCart(`+ i + `)">Add to cart</button>
         <p class="added-to-cart" id="added-to-cart">Added to cart</p>
     </div>`;
-    };
 };
-
-showTopSellProducts();
 
 const addToCart = (j) => {
     let addedToCart = document.querySelectorAll("#added-to-cart");
     let topSellCard = document.querySelectorAll("#top-sell-card");
     let newCartItem = {
-        "id": topSeelingProducts[j].id,
-        "imageurl": topSeelingProducts[j].imageurl,
-        "price": topSeelingProducts[j].price,
+        "id": allProducts[j].id,
+        "imageurl": allProducts[j].imageurl,
+        "price": allProducts[j].price,
         "value": 1,
     };
 
@@ -215,40 +212,57 @@ const addToCart = (j) => {
     calculateTotalCartPrice();
     calculateTotalProductQuantity();
 
-
-
-
-
-    topSellCard[j].innerHTML = `
-        <a href="`+ topSeelingProducts[j].url + `"><img src="` + topSeelingProducts[j].imageurl + `" alt="">
-            <span class="top-sell-discount">-45%</span>
-        </a>
-        <a href="`+ topSeelingProducts[j].url + `">
-            <p>`+ topSeelingProducts[j].title + `</p>
-        </a>
-        <h4>$`+ topSeelingProducts[j].price + `</h4>
-        <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                class="fa-regular fa-star"></i> <span>(`+ topSeelingProducts[j].reviewNumber + `)</span></p>
-        <button class="main-eng-font top-sell-button" onclick="addToCart(`+ j + `)">Add to cart</button>
-        <p class="added-to-cart display-block" id="added-to-cart">Added to cart</p>`;
-
-    const showTopSellProductsAfterAddedtoCartMessageEnd = () => {
-        topSellCard[j].innerHTML = `
-            <a href="`+ topSeelingProducts[j].url + `"><img src="` + topSeelingProducts[j].imageurl + `" alt="">
-                <span class="top-sell-discount">-45%</span>
-            </a>
-            <a href="`+ topSeelingProducts[j].url + `">
-                <p>`+ topSeelingProducts[j].title + `</p>
-            </a>
-            <h4>$`+ topSeelingProducts[j].price + `</h4>
-            <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                    class="fa-regular fa-star"></i> <span>(`+ topSeelingProducts[j].reviewNumber + `)</span></p>
-            <button class="main-eng-font top-sell-button" onclick="addToCart(`+ j + `)">Add to cart</button>
-            <p class="added-to-cart" id="added-to-cart">Added to cart</p>`;
-    };
-
-    setTimeout(showTopSellProductsAfterAddedtoCartMessageEnd, 300);
+    Toastify({
+        text: "Added to cart",
+        duration: 2000,
+        close: true,
+        avatar: "images/check-mark.png",
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            background: "rgb(26, 185, 2)",
+        },
+        onClick: function () { } // Callback after click
+    }).showToast();
 
 };
 
-// 
+// For you area
+const forYou = document.getElementById("just-for-you-inner");
+const loadMore = document.getElementById("load-more");
+
+if (allProducts.length > 5) {
+    for (let i = allProducts.length - 1; i >= allProducts.length - 5; i--) {
+        forYou.innerHTML += `<div class="just-for-you-card">
+        <a href="`+ allProducts[i].url + `"><img src="` + allProducts[i].imageurl + `" alt="">
+            <span class="just-for-you-discount">`+ allProducts[i].offer + `</span>
+        </a>
+        <a href="`+ allProducts[i].url + `">
+            <p>`+ allProducts[i].title + `</p>
+        </a>
+        <h4>$`+ allProducts[i].price + `</h4>
+        <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-regular fa-star"></i> <span>(`+ allProducts[i].reviewNumber + `)</span></p>
+        <button class="main-eng-font just-for-you-button" onclick="addToCart(`+ i + `)">Add to cart</button>
+        <p class="added-to-cart" id="added-to-cart">Added to cart</p>
+    </div>`;
+    };
+} else {
+    for (let i = allProducts.length - 1; i > 0; i--) {
+        forYou.innerHTML += `<div class="just-for-you-card">
+        <a href="`+ allProducts[i].url + `"><img src="` + allProducts[i].imageurl + `" alt="">
+            <span class="just-for-you-discount">`+ allProducts[i].offer + `</span>
+        </a>
+        <a href="`+ allProducts[i].url + `">
+            <p>`+ allProducts[i].title + `</p>
+        </a>
+        <h4>$`+ allProducts[i].price + `</h4>
+        <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-regular fa-star"></i> <span>(`+ allProducts[i].reviewNumber + `)</span></p>
+        <button class="main-eng-font just-for-you-button" onclick="addToCart(`+ i + `)">Add to cart</button>
+        <p class="added-to-cart" id="added-to-cart">Added to cart</p>
+    </div>`;
+    };
+};
+
